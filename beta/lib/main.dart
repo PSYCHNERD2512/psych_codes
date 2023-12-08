@@ -27,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 52, 163, 154),
+      backgroundColor: Color.fromARGB(255, 6, 196, 196),
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
@@ -64,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromARGB(255, 225, 214, 34),
+                      Color.fromARGB(255, 241, 241, 55),
                     ),
                     shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
@@ -98,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all<Color>(
-                      Color.fromARGB(255, 225, 214, 34),
+                      Color.fromARGB(255, 241, 241, 55),
                     ),
                     shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(

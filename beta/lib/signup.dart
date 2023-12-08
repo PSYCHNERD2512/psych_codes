@@ -4,7 +4,7 @@ class SignUpPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 52, 163, 154),
+      backgroundColor: Color.fromARGB(255, 6, 196, 196),
       body: SingleChildScrollView(
         child: Container(
           height: MediaQuery.of(context).size.height,
@@ -28,19 +28,20 @@ class SignUpPage extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                "Get Help. Make Money",
+                "Get the sauce",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 11, 109, 99),
-                  fontSize: 14,
+                  color: Color.fromARGB(255, 4, 93, 97),
+                  fontSize: 20,
                 ),
               ),
               SizedBox(height: 20),
-              TextFieldWidget(label: "Full Name", emoji: Icons.face),
-              TextFieldWidget(label: "Username", emoji: Icons.person),
-              TextFieldWidget(label: "Password", emoji: Icons.lock),
-              TextFieldWidget(label: "Email", emoji: Icons.mail),
-              TextFieldWidget(label: "Phone Number", emoji: Icons.phone),
+              TextFieldWidget(label: "Full Name", emoji: Icons.face_outlined),
+              TextFieldWidget(label: "Username", emoji: Icons.person_outlined),
+              TextFieldWidget(label: "Password", emoji: Icons.lock_outline),
+              TextFieldWidget(label: "UCSB Email", emoji: Icons.mail_outlined),
+              TextFieldWidget(
+                  label: "Phone Number", emoji: Icons.phone_outlined),
               SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -61,7 +62,7 @@ class SignUpPage extends StatelessWidget {
                         ),
                         style: ButtonStyle(
                           backgroundColor: MaterialStateProperty.all<Color>(
-                            Color.fromARGB(255, 225, 214, 34),
+                            Color.fromARGB(255, 241, 241, 55),
                           ),
                           shape: MaterialStateProperty.all<OutlinedBorder>(
                             RoundedRectangleBorder(
@@ -78,28 +79,34 @@ class SignUpPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    "Already have an account? ",
-                    style: TextStyle(
-                      color: Color.fromARGB(255, 2, 94, 86),
-                      fontSize: 14,
+                  Container(
+                    margin: EdgeInsets.all(0),
+                    child: Text(
+                      "Already have an account? ",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 0, 94, 99),
+                        fontSize: 14,
+                      ),
                     ),
                   ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      "Log in",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 2, 94, 86),
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
+                  Container(
+     
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        "Log in",
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 0, 94, 99),
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all<Color>(
-                        Colors.transparent,
+                      style: ButtonStyle(
+                        backgroundColor: MaterialStateProperty.all<Color>(
+                          Colors.transparent,
+                        ),
+                        elevation: MaterialStateProperty.all<double>(0),
                       ),
-                      elevation: MaterialStateProperty.all<double>(0),
                     ),
                   ),
                 ],
@@ -151,20 +158,12 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(bottom: 15),
+      margin: const EdgeInsets.only(bottom: 25),
       child: Container(
         height: 40,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20.0),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.2),
-              spreadRadius: 2,
-              blurRadius: 4,
-              offset: Offset(0, 2),
-            ),
-          ],
         ),
         child: TextField(
           controller: _controller,
