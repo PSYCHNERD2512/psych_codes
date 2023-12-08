@@ -50,7 +50,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: double.infinity,
               child: Material(
-                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(25.0),
+                color: Colors.black,
                 elevation: 5,
                 clipBehavior: Clip.none,
                 child: ElevatedButton(
@@ -68,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(15.0),
                       ),
                     ),
                   ),
@@ -79,8 +80,10 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(
               width: double.infinity,
               child: Material(
-                color: Colors.transparent,
+                borderRadius: BorderRadius.circular(25.0),
                 elevation: 5,
+                shadowColor: Colors.black,
+                color: Colors.transparent,
                 clipBehavior: Clip.none,
                 child: ElevatedButton(
                   onPressed: () {
@@ -102,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                     shape: MaterialStateProperty.all<OutlinedBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8.0),
+                        borderRadius: BorderRadius.circular(15.0),
                       ),
                     ),
                   ),

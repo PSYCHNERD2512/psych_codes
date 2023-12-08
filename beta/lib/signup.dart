@@ -26,16 +26,16 @@ class SignUpPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 0),
               Text(
                 "Get the sauce",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 4, 93, 97),
-                  fontSize: 20,
+                  fontSize: 17,
                 ),
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 40),
               TextFieldWidget(label: "Full Name", emoji: Icons.face_outlined),
               TextFieldWidget(label: "Username", emoji: Icons.person_outlined),
               TextFieldWidget(label: "Password", emoji: Icons.lock_outline),
@@ -48,16 +48,21 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   Container(
                     child: Material(
+                      borderRadius: BorderRadius.circular(25.0),
+                      elevation: 5,
+                      shadowColor: Colors.black,
                       color: Colors.transparent,
-                      elevation: 0,
                       clipBehavior: Clip.none,
                       child: ElevatedButton(
                         onPressed: () {},
                         child: Padding(
-                          padding: const EdgeInsets.all(15.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Text(
                             "Sign Up!",
-                            style: TextStyle(fontSize: 18, color: Colors.black),
+                            style: TextStyle(
+                                fontSize: 18,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         style: ButtonStyle(
@@ -90,13 +95,12 @@ class SignUpPage extends StatelessWidget {
                     ),
                   ),
                   Container(
-     
                     child: TextButton(
                       onPressed: () {},
                       child: Text(
                         "Log in",
                         style: TextStyle(
-                          color: Color.fromARGB(255, 0, 94, 99),
+                          color: Colors.black,
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
@@ -163,7 +167,7 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         height: 40,
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(20.0),
+          borderRadius: BorderRadius.circular(17.5),
         ),
         child: TextField(
           controller: _controller,
