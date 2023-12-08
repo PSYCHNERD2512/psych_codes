@@ -170,16 +170,19 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
       child: Container(
         height: 40,
         decoration: BoxDecoration(
-          color: Colors.white,
+   
           borderRadius: BorderRadius.circular(17.5),
           boxShadow: [
+             BoxShadow(
+            color: Color.fromARGB(255, 167, 166, 166),
+            offset: Offset(0,-2)
+          ),
             BoxShadow(
-              color: _isFocused
-                  ? Colors.black.withOpacity(0.8) // Dark black when focused
-                  : Colors.transparent,
-              spreadRadius: -10.0,
-              blurRadius: 20.0,
-              offset: Offset(0, 4),
+
+              color: Colors.white,
+              blurRadius: 1.75,
+              spreadRadius: -1.75,
+         
             ),
           ],
         ),
