@@ -161,6 +161,10 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
 
   @override
   Widget build(BuildContext context) {
+    bool isPassword = false;
+    if (widget.label == "Password") {
+      isPassword = true;
+    }
     return Container(
       margin: const EdgeInsets.only(bottom: 25),
       child: Container(
@@ -168,17 +172,33 @@ class _TextFieldWidgetState extends State<TextFieldWidget> {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(17.5),
+          boxShadow: [
+            BoxShadow(
+              color: _isFocused
+                  ? Colors.black.withOpacity(0.8) // Dark black when focused
+                  : Colors.transparent,
+              spreadRadius: -10.0,
+              blurRadius: 20.0,
+              offset: Offset(0, 4),
+            ),
+          ],
         ),
         child: TextField(
           controller: _controller,
           focusNode: _focusNode,
-          style: TextStyle(color: _isFocused ? Colors.black : Colors.grey[600]),
+          style: TextStyle(
+              color: _isFocused
+                  ? const Color.fromRGBO(0, 0, 0, 1)
+                  : Colors.grey[600]),
+          obscureText: isPassword,
           decoration: InputDecoration(
-            labelText: _isFocused ? null : widget.label,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+            hintText: _isFocused ? null : widget.label,
+            contentPadding: EdgeInsets.fromLTRB(0, 3, 0, 0),
             border: InputBorder.none,
-            prefixIcon: Icon(widget.emoji,
-                color: _isFocused ? Colors.black : Colors.grey[600]),
+            prefixIcon: Icon(
+              widget.emoji,
+              color: _isFocused ? Colors.black : Colors.grey[600],
+            ),
           ),
         ),
       ),
