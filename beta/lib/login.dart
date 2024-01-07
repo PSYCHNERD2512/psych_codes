@@ -1,9 +1,8 @@
-import 'package:beta/login.dart';
-import 'package:beta/otppage.dart';
+import 'package:beta/signup.dart';
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class LogInPage extends StatelessWidget {
+  const LogInPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,14 +15,14 @@ class SignUpPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const SizedBox(height: 100),
+              const SizedBox(height: 273),
               const Row(
                 children: [
                   Text(
-                    "Create\nAccount",
+                    "Login",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 40,
+                      fontSize: 48,
                       fontWeight: FontWeight.bold,
                     ),
                     textAlign: TextAlign.start,
@@ -31,25 +30,104 @@ class SignUpPage extends StatelessWidget {
                 ],
               ),
               const Text(
-                "Get the sauce",
+                "Get the sauce.",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Color.fromARGB(255, 4, 93, 97),
-                  fontSize: 17,
+                  fontSize: 20,
                 ),
               ),
-              const SizedBox(height: 40),
-              const TextFieldWidget(
-                  label: "Full Name", emoji: Icons.face_outlined),
-              const TextFieldWidget(
-                  label: "Username", emoji: Icons.person_outlined),
-              const TextFieldWidget(
-                  label: "Password", emoji: Icons.lock_outline),
-              const TextFieldWidget(
-                  label: "UCSB Email", emoji: Icons.mail_outlined),
-              const TextFieldWidget(
-                  label: "Phone Number", emoji: Icons.phone_outlined),
-              const SizedBox(height: 10),
+              const SizedBox(height: 28),
+              Container(
+                height: 73,
+                width: 357,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(17.5),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 167, 166, 166),
+                        offset: Offset(0, -2)),
+                    BoxShadow(
+                      color: Colors.white,
+                      blurRadius: 1.75,
+                      spreadRadius: -1.75,
+                    ),
+                  ],
+                ),
+                child: const TextField(
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                    hintText: 'Phone, email or username',
+                    hintStyle: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold, // Roboto semibold
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Container(
+                height: 73,
+                width: 357,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(17.5),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 167, 166, 166),
+                        offset: Offset(0, -2)),
+                    BoxShadow(
+                      color: Colors.white,
+                      blurRadius: 1.75,
+                      spreadRadius: -1.75,
+                    ),
+                  ],
+                ),
+                child: const TextField(
+                  obscureText: true,
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600,
+                  ),
+                  decoration: InputDecoration(
+                    border: InputBorder.none,
+                    contentPadding:
+                        EdgeInsets.symmetric(horizontal: 16, vertical: 20),
+                    hintText: 'Password',
+                    hintStyle: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold, // Roboto semibold
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 22,
+              ),
+              InkWell(
+                onTap: () {
+                  null;
+                },
+                child: const Text(
+                  "Forgot password?",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 4, 93, 97),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -60,14 +138,7 @@ class SignUpPage extends StatelessWidget {
                     color: Colors.transparent,
                     clipBehavior: Clip.none,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const otpPage(),
-                          ),
-                        );
-                      },
+                      onPressed: () {},
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                           const Color(0xFFF1F137),
@@ -81,7 +152,7 @@ class SignUpPage extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.all(10.0),
                         child: Text(
-                          "Sign Up!",
+                          "Log In!",
                           style: TextStyle(
                               fontSize: 18,
                               color: Colors.black,
@@ -99,7 +170,7 @@ class SignUpPage extends StatelessWidget {
                   Container(
                     margin: const EdgeInsets.all(0),
                     child: const Text(
-                      "Already have an account? ",
+                      "Don’t have an account? ",
                       style: TextStyle(
                         color: Color.fromARGB(255, 0, 94, 99),
                         fontSize: 14,
@@ -111,12 +182,12 @@ class SignUpPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const LogInPage(),
+                          builder: (context) => const SignUpPage(),
                         ),
                       );
                     },
                     child: const Text(
-                      "Log in",
+                      "Sign up",
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 14,
