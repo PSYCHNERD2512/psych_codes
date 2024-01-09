@@ -1,3 +1,4 @@
+import 'package:beta/initialPage.dart';
 import 'package:beta/login.dart';
 import 'package:flutter/material.dart';
 
@@ -337,7 +338,7 @@ void _showConfirmationDialog(BuildContext context) {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const LogInPage()),
+                          builder: (context) => const initialPage()),
                     );
                   },
                   style: ButtonStyle(

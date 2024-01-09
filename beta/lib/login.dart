@@ -1,8 +1,21 @@
 import 'package:beta/signup.dart';
 import 'package:flutter/material.dart';
+import './loginBloc.dart';
 
-class LogInPage extends StatelessWidget {
+class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
+
+  @override
+  State<LogInPage> createState() => _LogInPageState();
+}
+
+class _LogInPageState extends State<LogInPage> {
+  final LoginBloc _loginBloc = LoginBloc();
+  @override
+  void dispose() {
+    _loginBloc.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -138,7 +151,9 @@ class LogInPage extends StatelessWidget {
                     color: Colors.transparent,
                     clipBehavior: Clip.none,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        _loginBloc.login();
+                      },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
                           const Color(0xFFF1F137),
