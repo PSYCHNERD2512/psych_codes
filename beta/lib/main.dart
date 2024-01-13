@@ -1,3 +1,4 @@
+import 'package:beta/course_group.dart';
 import 'package:flutter/material.dart';
 import './signup.dart';
 import './login.dart';
@@ -74,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const LogInPage()),
+                          builder: (context) => const CoursePage()),
                     );
                   },
                   style: ButtonStyle(
