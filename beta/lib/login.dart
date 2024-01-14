@@ -1,6 +1,5 @@
 import 'package:beta/signup.dart';
 import 'package:flutter/material.dart';
-import './loginBloc.dart';
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
@@ -10,13 +9,6 @@ class LogInPage extends StatefulWidget {
 }
 
 class _LogInPageState extends State<LogInPage> {
-  final LoginBloc _loginBloc = LoginBloc();
-  @override
-  void dispose() {
-    _loginBloc.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -152,7 +144,7 @@ class _LogInPageState extends State<LogInPage> {
                     clipBehavior: Clip.none,
                     child: ElevatedButton(
                       onPressed: () {
-                        _loginBloc.login();
+                        null;
                       },
                       style: ButtonStyle(
                         backgroundColor: MaterialStateProperty.all<Color>(
