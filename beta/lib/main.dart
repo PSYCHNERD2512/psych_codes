@@ -1,3 +1,6 @@
+import 'package:beta/api/apiclient.dart';
+import 'package:beta/bloc_provider.dart';
+import 'package:beta/blocs/mainBloc.dart';
 import 'package:beta/course_group.dart';
 import 'package:flutter/material.dart';
 import './signup.dart';
@@ -7,24 +10,29 @@ import 'package:flutter_native_splash/flutter_native_splash.dart';
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  runApp(const MyApp());
+  mainBloc bloc = mainBloc();
+  runApp(MyApp(bloc));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  final mainBloc bloc;
+  const MyApp(this.bloc, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-        focusColor: Colors.black,
-        textSelectionTheme: const TextSelectionThemeData(
-            cursorColor: Colors.black,
-            selectionColor: Colors.black,
-            selectionHandleColor: Colors.black),
+    return BlocProvider(
+      bloc,
+      child: MaterialApp(
+        theme: ThemeData(
+          primarySwatch: Colors.lightBlue,
+          focusColor: Colors.black,
+          textSelectionTheme: const TextSelectionThemeData(
+              cursorColor: Colors.black,
+              selectionColor: Colors.black,
+              selectionHandleColor: Colors.black),
+        ),
+        home: const MyHomePage(),
       ),
-      home: MyHomePage(),
     );
   }
 }
